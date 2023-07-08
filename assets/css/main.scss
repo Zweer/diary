@@ -118,6 +118,10 @@ nav ul li:last-child {
     -ms-transition: text-shadow, color 1s;
     -o-transition: text-shadow, color 1s;
     transition: text-shadow, color 1s;
+
+    > * {
+        font-family: "Algerian";
+    }
 }
 
 .date-index:hover {
