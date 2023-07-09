@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
         <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-        
+        <link rel="stylesheet" href="{{ "/assets/css/syntax.css" | prepend: site.baseurl }}">
+
         <script src="https://kit.fontawesome.com/c0a5510d86.js" crossorigin="anonymous"></script>
 
         <title>{{ page.title}}</title>
@@ -13,6 +14,7 @@
 
     <body>
         {% include header.html %}
+
         <div class="content">
             <div class="paper paper-before" id="paperBefore"></div>
             <div class="paper paper-article">
@@ -24,16 +26,19 @@
                     {{ page.date | to_string | slice: 0, 10 }}
                 </span>
                 </a>
-                
+
                 <!--Calendar body-->
                 {% include calendar.html %}
-            
+
                 <!--Article body-->
                 <article class="typo">
                     {{ content }}
                 </article>
-            </div>        
+            </div>
         </div>
+
         {% include footer.html %}
+
+        <script type="text/javascript" src="{{ "/assets/js/calendar.js" | prepend: site.baseurl }}"></script>
     </body>
 </html>

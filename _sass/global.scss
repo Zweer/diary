@@ -1,0 +1,18 @@
+@import "variables";
+
+body {
+  font-family: "Microsoft YaHei UI";
+  margin: 0;
+
+  background: $firstColor;
+  color: $forthColor;
+}
+
+a {
+  text-decoration: none;
+  color: $forthColor;
+
+  &:hover {
+    color: $thirdColor;
+  }
+}

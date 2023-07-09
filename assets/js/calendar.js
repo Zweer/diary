@@ -12,7 +12,7 @@ function eventAttach() {
 
         openCal: function(){
             cal.style.display = "block";
-            paperA.style.backgroundColor = "#fc8f96";
+            paperA.style.backgroundColor = "#FFC7C7";
         },
 
         closeCal: function(){
@@ -136,7 +136,7 @@ function calInit() {
 
     var removeActiveNow = function() {
         var onEles = document.getElementsByClassName("cal-day now");
-        
+
         if (onEles.length) {
             onEles[0].classList.remove("now");
         }

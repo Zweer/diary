@@ -1,8 +1,6 @@
-@import "predefine";
-
 #calendar {
   z-index: 99;
-  color: $text;
+  color: $forthColor;
   font-weight: bold;
   display: none;
   position: absolute;
@@ -33,14 +31,14 @@
   font-size: 1.5em;
 
   &:hover .btn {
-    color: $text;
+    color: $thirdColor;
   }
 
   .btn {
-    color: $text-light;
+    color: lighten($thirdColor, 5);
 
     &:hover {
-      color: $theme;
+      color: darken($thirdColor, 20);
     }
   }
 }
@@ -50,24 +48,26 @@
 }
 
 .cal-month {
+  $color: lighten($thirdColor, 5);
+
   border: 1px solid transparent;
-  color: $text-light;
-  border-top-color: $text-light;
-  border-bottom-color: $text-light;
+  color: $color;
+  border-top-color: $color;
+  border-bottom-color: $color;
 
   &:hover {
-    color: $text;
-    border-top-color: $text;
-    border-bottom-color: $text;
+    color: $thirdColor;
+    border-top-color: $thirdColor;
+    border-bottom-color: $thirdColor;
   }
 
   li:hover {
-    color: $theme;
+    color: darken($thirdColor, 20);
     cursor: pointer;
   }
 
   &__now {
-    color: $text;
+    color: $thirdColor;
   }
 }
 
@@ -91,20 +91,20 @@
   display: block;
   width: 100%;
   @include circle-box;
-  border: 1px solid $theme;
-  color: $theme;
+  border: 1px solid $thirdColor;
+  color: $thirdColor;
 
   &:hover {
-    background: $theme;
+    background: $thirdColor;
     color: #fff;
     @include transition-prop(background);
   }
 }
 
 .cal-day.outmonth {
-  color: $text-light;
+  color: $forthColor;
 }
 
 .now {
-  color: $theme;
+  color: $thirdColor;
 }
