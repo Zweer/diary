@@ -37,6 +37,9 @@ jobs:
       - name: 🔨 build site
         run: bundle exec jekyll build
 
+      - name: 📦 upload artifact
+        uses: actions/upload-pages-artifact@v1
+
   # Deploy job
   deploy:
     # Add a dependency to the build job
