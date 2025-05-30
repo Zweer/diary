@@ -4,60 +4,39 @@ on:
   push:
     branches:
       - main
-      # - source
-      # It is highly recommended that you only run this action on push to a
-      # specific branch, eg. master or source (if on *.github.io repo)
-
-  workflow_dispatch: # Allows a run of this workflow to be triggerred manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 📂 setup
-        uses: actions/checkout@v3
-        # include the lines below if you are using jekyll-last-modified-at
-        # or if you would otherwise need to fetch the full commit history
-        # however this may be very slow for large repositories!
-        # with:
-        # fetch-depth: '0'
-
-      - name: 💎 setup ruby
-        uses: ruby/setup-ruby@v1
+      - name: 📂 Checkout
+        uses: actions/checkout@v4
         with:
-          ruby-version: 3.1 # can change this to whatever version you prefer
-          bundler-cache: true
+          fetch-depth: 0
 
-      - name: 📌 install dependencies
-        run: |
-          bundle config set deployment true
-          bundle config path ${GITHUB_WORKSPACE}/vendor/bundle
-          bundle install --jobs=4 --retry=3
+      - name: 📌 Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: 🔨 build site
-        run: bundle exec jekyll build
+      - name: 🔨 Build
+        uses: actions/jekyll-build-pages@v1
 
-      - name: 📦 upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: 📦 Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
-  # Deploy job
   deploy:
-    # Add a dependency to the build job
     needs: build
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write
+      id-token: write
 
-    # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+        uses: actions/deploy-pages@v4

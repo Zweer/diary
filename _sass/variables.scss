@@ -1,11 +1,9 @@
 @use "sass:list";
 
-$palette: (#FFF9F9, #FDECEC, #FFC7C7, #AAAAAA);
-
-$firstColor: list.nth($palette, 1);
-$secondColor: list.nth($palette, 2);
-$thirdColor: list.nth($palette, 3);
-$forthColor: list.nth($palette, 4);
+$firstColor: #FFF9F9;
+$secondColor: #FDECEC;
+$thirdColor: #FFC7C7;
+$forthColor: #AAAAAA;
 
 $layout-breakpoint-small: 650px;
 $layout-breakpoint-medium: 1024px;

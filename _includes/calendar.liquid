@@ -14,29 +14,35 @@
         <div id="calHeader" class="cal-body">
             <div id="calYear" class="calheader-item cal-year">
                 <i id="lastYearBtn" class="btn fa fa-angle-left"></i>
-                <label class="now">2017</label>
+                <label class="now">{{ site.start }}</label>
                 <i id="nextYearBtn" class="btn fa fa-angle-right"></i>
             </div>
             <i id="closeBtn" class="calheader-item btn fa fa-close"></i>
         </div>
 
         <ul id="calMonth" class="cal-body cal-month">
-            <li title="0">Jan</li>
+            <li title="0">Gen</li>
             <li title="1">Feb</li>
             <li title="2">Mar</li>
             <li title="3">Apr</li>
-            <li title="4">May</li>
-            <li title="5">Jun</li>
-            <li title="6">Jul</li>
-            <li title="7">Aug</li>
-            <li title="8">Sep</li>
-            <li title="9">Oct</li>
+            <li title="4">Mag</li>
+            <li title="5">Giu</li>
+            <li title="6">Lug</li>
+            <li title="7">Ago</li>
+            <li title="8">Set</li>
+            <li title="9">Ott</li>
             <li title="10">Nov</li>
-            <li title="11" class="cal-month__now">Dec</li>
+            <li title="11" class="cal-month__now">Dic</li>
         </ul>
 
         <ul id="calWeek" class="cal-body cal-week">
-            <li>Sun</li><li>Mon</li><li>Tue</li><li>Wed</li><li>Thu</li><li>Fri</li><li>Sat</li>
+            <li>Lun</li>
+            <li>Mar</li>
+            <li>Mer</li>
+            <li>Gio</li>
+            <li>Ven</li>
+            <li>Sab</li>
+            <li>Dom</li>
         </ul>
 
         <ul id="cal-day1" class="cal-body cal-body-day">
@@ -98,19 +104,45 @@
 
 
 <script>
-    var urlJSON = {
+  {% comment %}
+  {
+    categories: string[];
+    category: string;
+    collection: string; // "posts"
+    content: string;
+    date: string; // "2023-07-06 00:00:00 +0200",
+    draft: boolean;
+    excerpt: string;
+    ext: string; // ".md",
+    id: string; // "/2023/07/06/che-bella",
+    layout: string; // "post",
+    next?: null,
+    output: string;
+    path: string; // "_posts/2023-07-06-che-bella.md",
+    previous?: null,
+    relative_path: string; // "_posts/2023-07-06-che-bella.md",
+    slug: string; // "che-bella",
+    tags: [],
+    title: string; // "Ma quanto sei bella!",
+    url: string; // "/2023/07/06/che-bella"
+  }
+  const posts = [
     {% for post in site.posts %}
+    {{ post | jsonify }}
+    {% endfor %}
+  ];
+  {% endcomment %}
+
+  const urlJSON = {
+  {% for post in site.posts %}
     "{{ post.url | slice: 1, 10 | replace: '-', '/' | replace: '/0', '/' | strip }}": {
-        url: "{{ site.baseurl }}{{ post.url }}",
+        url: "{{ post.url | relative_url }}",
         excerpt: "{{ post.excerpt }}",
         index: {{ forloop.rindex }}
     },
-    {% endfor %}
-    "end": "end"
-    };
-    {% if page.date %}
-    var activeArticle = "{{ page.date | slice: 0, 10 | replace: '-', '/' | replace: '/0', '/' }}";
-    {% else %}
-    var activeArticle = new Date().toISOString();
-    {% endif %}
+  {% endfor %}
+  };
+
+  const activeArticle = {% if page.date %}"{{ page.date | slice: 0, 10 | replace: '-', '/' | replace: '/0', '/' }}"{% else %}new Date().toISOString(){% endif %};
+
 </script>

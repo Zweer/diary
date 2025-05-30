@@ -3,10 +3,8 @@ name: Niccolò Olivieri Achille
 permalink: :year/:month/:day/:title
 baseurl: /diary
 
-# Your blog's start year and this year, showed in the footer left
-# start is optional
+# Your blog's start year
 start: 2013
-now: 2023
 
 # Social links showed in the footer
 # You just need modify the nickname of github and twitter
