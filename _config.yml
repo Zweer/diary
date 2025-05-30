@@ -7,7 +7,7 @@ baseurl: /diary
 # start is optional
 start: 2013
 now: 2023
- 
+
 # Social links showed in the footer
 # You just need modify the nickname of github and twitter
 link:
@@ -23,11 +23,13 @@ nav:
    Why: "/why"
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
 highlighter: rouge
 
 sass:
   sass_dir: _sass
   style: compressed
-
-plugins:
-- jekyll-feed
