@@ -30,7 +30,7 @@ class Calendar {
   }
 
   get openButton() {
-    return document.getElementById('calendar-close-btn');
+    return document.getElementById('calendar-open-btn');
   }
 
   get prevYearButton() {
@@ -80,7 +80,7 @@ class Calendar {
           this.calendarElement.style.display = 'none';
         }
         if (this.paperBackground) {
-          this.paperBackground.style.display = '#fff';
+          this.paperBackground.style.backgroundColor = '#fff';
         }
       }, false);
     }
@@ -91,7 +91,7 @@ class Calendar {
           this.calendarElement.style.display = 'block';
         }
         if (this.paperBackground) {
-          this.paperBackground.style.display = '#ffc7c7';
+          this.paperBackground.style.backgroundColor = 'rgb(252, 143, 150)';
         }
       }, false);
     }

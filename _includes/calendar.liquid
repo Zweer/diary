@@ -126,11 +126,6 @@
     title: string; // "Ma quanto sei bella!",
     url: string; // "/2023/07/06/che-bella"
   }
-  const posts = [
-    {% for post in site.posts %}
-    {{ post | jsonify }}
-    {% endfor %}
-  ];
   {% endcomment %}
 
   const posts = [
@@ -144,6 +139,7 @@
       excerpt: {{ post.excerpt | jsonify }},
       ext: {{ post.ext | jsonify }},
       id: {{ post.id | jsonify }},
+      index: {{ forloop.rindex0 | jsonify }},
       layout: {{ post.layout | jsonify }},
       path: {{ post.path | jsonify }},
       relative_path: {{ post.relative_path | jsonify }},
