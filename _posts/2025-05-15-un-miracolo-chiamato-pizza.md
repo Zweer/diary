@@ -6,7 +6,7 @@ categories:
   - pinè
   - mondiali
   - pizza
-excerpt: L'orgoglio incontenibile per la campionessa GioGio, le solite dinamiche familiari, e poi la sorpresa: una pizza che sa di miracolo. Un post che celebra le vittorie sportive e quelle, ancora più preziose, del cuore.
+excerpt: "L'orgoglio incontenibile per la campionessa GioGio, le solite dinamiche familiari, e poi la sorpresa: una pizza che sa di miracolo. Un post che celebra le vittorie sportive e quelle, ancora più preziose, del cuore."
 ---
 
 Ciao GioGio,
