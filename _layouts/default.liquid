@@ -18,13 +18,13 @@
         {% include header.liquid %}
 
         <div class="content">
-            <div class="paper paper-before" id="paperBefore"></div>
+            <div class="paper paper-before" id="paper-before"></div>
             <div class="paper paper-article">
                 <!-- Date No. sign -->
                 <a href="#" title="home">
-                <span id="openBtn" class="date-index">
-                    No.<span id="postIndex"></span><br>
-                        <!--Date YYYY-MM-DD-->
+                <span id="calendar-open-btn" class="date-index">
+                    No.<span id="ribbon"></span><br>
+                    <!--Date YYYY-MM-DD-->
                     {{ page.date | to_string | slice: 0, 10 }}
                 </span>
                 </a>
@@ -41,6 +41,6 @@
 
         {% include footer.liquid %}
 
-        <script type="text/javascript" src="{{ "/assets/js/calendar.js" | relative_url }}"></script>
+        <script type="text/javascript" src="{{ "/assets/js/calendar.v2.js" | relative_url }}"></script>
     </body>
 </html>

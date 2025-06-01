@@ -9,7 +9,7 @@
         padding: 5rem 1em;
         text-align: justify;
     }
-    #openBtn {
+    #calendar-open-btn {
         text-align: left;
         right: auto;
         transform: none;
@@ -24,14 +24,14 @@
     footer {
         padding: 2rem 1rem;
     }
-    #dateTable {
+    #calendar-table {
         width: 100%;
         padding: 0;
     }
-    #calMonth {
+    #calendar-months {
         overflow: scroll;
     }
-    .cal-week, .cal-body-day, #calHeader {
+    .calendar-week, .calendar-body-day, #calendar-header {
         padding-left: 1em;
         padding-right: 1em;
         box-sizing: border-box;
