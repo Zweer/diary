@@ -1,32 +1,66 @@
 @import "variables";
 
 header {
-  z-index: -10;
-  padding: 1.6rem 10rem 4rem;
+  z-index: 100;
+  position: relative;
+  padding: 0.8rem;
   color: $forthColor;
-  background-color: $secondColor;
+  background: linear-gradient(135deg, $secondColor 0%, lighten($thirdColor, 20%) 100%);
   font-weight: 300;
   font-size: large;
   box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  @media (min-width: $tablet) {
+    padding: 1.5rem 3rem;
+  }
+  
+  @media (min-width: $desktop) {
+    padding: 2rem 5rem;
+  }
 }
 
 nav {
   position: relative;
+  text-align: center;
 
   ul {
     padding-left: 0;
-    display: block;
-    position: relative;
-    align-content: stretch;
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
 
     li {
       display: inline-block;
       position: relative;
-      margin: 0 3.6em 0 0;
+      margin: 0 0.8rem;
       list-style: none;
+      
+      @media (min-width: $tablet) {
+        margin: 0 1.5rem;
+      }
 
       &:first-child {
-        margin-right: 5em;
+        margin-right: 1.5rem;
+        
+        .fa-heart {
+          color: $thirdColor;
+          font-size: 1.5rem;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+          
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+        
+        @media (min-width: $tablet) {
+          margin-right: 3rem;
+        }
       }
 
       &:last-child {
@@ -35,10 +69,14 @@ nav {
 
       a {
         color: $forthColor;
-        font-weight: bold;
+        font-weight: 500;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        transition: all 0.3s ease;
 
         &:hover {
-          color: #5e5d5d;
+          color: white;
+          background: $thirdColor;
         }
       }
     }
@@ -46,23 +84,49 @@ nav {
 }
 
 .nav-button {
+  z-index: 20;
+  position: absolute;
+  
   &:hover i {
-    font-size: 5em;
-    color: #5e5d5d;
+    font-size: 4em;
+    color: $thirdColor;
   }
 
   i {
-    color: #dfdfe2;
+    color: $thirdColor;
     position: absolute;
-    top: 46%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   &#oldPostBtn {
-    left: 0;
+    left: 1rem;
+    
+    @media (min-width: $tablet) {
+      left: 2rem;
+    }
+    
+    @media (min-width: $desktop) {
+      left: 3rem;
+    }
 }
 
-  &#nextPostBtn,
-  &#nextPostBtn i {
-    right: 0;
+  &#nextPostBtn {
+    right: 1rem;
+    
+    i {
+      right: 0;
+    }
+    
+    @media (min-width: $tablet) {
+      right: 2rem;
+    }
+    
+    @media (min-width: $desktop) {
+      right: 3rem;
+    }
   }
 }

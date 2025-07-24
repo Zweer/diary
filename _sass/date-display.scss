@@ -1,0 +1,89 @@
+// Date display improvements for mobile
+.post-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1.5rem;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, $secondColor 0%, $thirdColor 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+  @media (min-width: $tablet) {
+    margin: 1.5rem auto 2rem;
+    max-width: 400px;
+  }
+  
+  &::before,
+  &::after {
+    content: "❤️";
+    position: absolute;
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+  
+  &::before {
+    left: 1rem;
+  }
+  
+  &::after {
+    right: 1rem;
+  }
+  
+  .date-wrapper {
+    text-align: center;
+    
+    .date-day {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      display: block;
+      line-height: 1;
+      
+      @media (min-width: $tablet) {
+        font-size: 2.5rem;
+      }
+    }
+    
+    .date-month-year {
+      font-size: 1rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.3rem;
+      
+      @media (min-width: $tablet) {
+        font-size: 1.1rem;
+      }
+    }
+    
+    .date-weekday {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+  }
+}
+
+// Mobile-friendly date ribbon
+.date-ribbon {
+  position: fixed;
+  top: 50%;
+  right: -35px;
+  transform: translateY(-50%) rotate(45deg);
+  background: $thirdColor;
+  color: white;
+  padding: 0.5rem 3rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  display: none;
+  
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}

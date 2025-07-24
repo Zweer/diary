@@ -1,0 +1,31 @@
+<!-- Responsive month names -->
+<style>
+@media (max-width: 767px) {
+  #calendar-months li {
+    font-size: 0 !important;
+  }
+  
+  #calendar-months li::after {
+    content: attr(data-short);
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #calendar-months li::after {
+    content: none;
+  }
+}
+</style>
+
+<script>
+// Add short month names for mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const monthElements = document.querySelectorAll('#calendar-months li');
+  const shortNames = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+  
+  monthElements.forEach((el, index) => {
+    el.setAttribute('data-short', shortNames[index]);
+  });
+});
+</script>

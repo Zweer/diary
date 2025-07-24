@@ -3,6 +3,14 @@ layout: default
 title: {{ page.title }}
 ---
 
+<div class="post-date">
+  <div class="date-wrapper">
+    <span class="date-day">{{ page.date | date: "%-d" }}</span>
+    <span class="date-month-year">{{ page.date | date: "%B %Y" | replace: "January", "Gennaio" | replace: "February", "Febbraio" | replace: "March", "Marzo" | replace: "April", "Aprile" | replace: "May", "Maggio" | replace: "June", "Giugno" | replace: "July", "Luglio" | replace: "August", "Agosto" | replace: "September", "Settembre" | replace: "October", "Ottobre" | replace: "November", "Novembre" | replace: "December", "Dicembre" }}</span>
+    <span class="date-weekday">{{ page.date | date: "%A" | replace: "Monday", "Lunedì" | replace: "Tuesday", "Martedì" | replace: "Wednesday", "Mercoledì" | replace: "Thursday", "Giovedì" | replace: "Friday", "Venerdì" | replace: "Saturday", "Sabato" | replace: "Sunday", "Domenica" }}</span>
+  </div>
+</div>
+
 <h1>{{ page.title }}</h1>
 
 {{ page.content }}

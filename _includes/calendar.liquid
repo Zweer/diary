@@ -1,23 +1,12 @@
-{% if page.home %}
-<style>
-    #calendar {
-        display: block;
-    }
-    #calendar-close-btn, #calendar-open-btn {
-        display: none;
-    }
-</style>
-{% endif %}
-
-<div id="calendar" class="calendar">
+<div id="calendar" class="calendar{% if page.home %} home-calendar{% endif %}">
     <div id="calendar-table" class="calendar-table">
         <div id="calendar-header" class="calendar-body">
             <div id="calendar-year" class="calendar-header-item calendar-year">
                 <i id="calendar-prev-year" class="btn fa fa-angle-left"></i>
-                <label class="now">{{ site.start }}</label>
+                <label class="now">{{ 'now' | date: '%Y' }}</label>
                 <i id="calendar-next-year" class="btn fa fa-angle-right"></i>
             </div>
-            <i id="calendar-close-btn" class="calendar-header-item btn fa fa-close"></i>
+            {% unless page.home %}<i id="calendar-close-btn" class="calendar-header-item btn fa fa-close"></i>{% endunless %}
         </div>
 
         <ul id="calendar-months" class="calendar-body calendar-months">
@@ -153,3 +142,5 @@
   const activePost = {% if page.id %}{{ page.id | jsonify }}{% else %}null{% endif %};
 
 </script>
+
+{% include calendar-responsive.liquid %}

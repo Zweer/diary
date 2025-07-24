@@ -20,14 +20,12 @@
         <div class="content">
             <div class="paper paper-before" id="paper-before"></div>
             <div class="paper paper-article">
-                <!-- Date No. sign -->
-                <a href="#" title="home">
-                <span id="calendar-open-btn" class="date-index">
-                    No.<span id="ribbon"></span><br>
-                    <!--Date YYYY-MM-DD-->
-                    {{ page.date | to_string | slice: 0, 10 }}
-                </span>
-                </a>
+                <!-- Calendar toggle button -->
+                {% unless page.home %}
+                <button id="calendar-open-btn" class="calendar-toggle-btn" title="Open calendar">
+                    <i class="fa-regular fa-calendar"></i>
+                </button>
+                {% endunless %}
 
                 <!--Calendar body-->
                 {% include calendar.liquid %}
@@ -41,6 +39,6 @@
 
         {% include footer.liquid %}
 
-        <script type="text/javascript" src="{{ "/assets/js/calendar.v2.js" | relative_url }}"></script>
+        <script type="text/javascript" src="{{ "/assets/js/calendar-simple.js" | relative_url }}"></script>
     </body>
 </html>

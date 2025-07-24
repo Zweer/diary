@@ -1,13 +1,21 @@
 footer {
-  z-index: 999;
+  z-index: 90;
   position: relative;
   /*bottom: 4rem;*/
-  padding: 3rem 10rem;
+  padding: 2rem 1rem;
   color: $forthColor;
   background-color: $secondColor;
   font-weight: 400;
   /*font-size: small;*/
   box-sizing: border-box;
+  
+  @media (min-width: $tablet) {
+    padding: 3rem 5rem;
+  }
+  
+  @media (min-width: $desktop) {
+    padding: 3rem 10rem;
+  }
 
   div {
     position: relative;
@@ -19,17 +27,28 @@ footer {
   }
 
   ul.contact {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0 0;
+    position: static;
+    margin: 1rem 0 0;
+    text-align: center;
+    
+    @media (min-width: $tablet) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      text-align: left;
+    }
 
     li {
       display: inline-block;
       margin-right: 1em;
       list-style: none;
       color: #aaa6ab;
-      font-size: .6em;
+      font-size: .8em;
+      
+      @media (min-width: $tablet) {
+        font-size: .6em;
+      }
 
       &:last-child {
         margin-right: 0;

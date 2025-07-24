@@ -1,0 +1,70 @@
+// Mobile navigation improvements
+@media (max-width: $tablet - 1px) {
+  // Keep menu horizontal but smaller
+  nav ul {
+    padding: 0.3rem 0.8rem;
+    
+    li {
+      margin: 0 0.3rem !important;
+      
+      &:first-child {
+        margin-right: 0.8rem !important;
+        
+        .fa-heart {
+          font-size: 1.2rem !important;
+        }
+      }
+      
+      a {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.5rem;
+      }
+    }
+  }
+  
+  // Mobile navigation buttons
+  .nav-button {
+    position: fixed;
+    bottom: 2rem;
+    background: $thirdColor;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    
+    i {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    &#oldPostBtn {
+      left: 2rem;
+    }
+    
+    &#nextPostBtn {
+      right: 2rem;
+      
+      i {
+        right: auto !important;
+      }
+    }
+    
+    &:hover {
+      transform: scale(1.1);
+      background: darken($thirdColor, 10%);
+      
+      i {
+        color: white;
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+}

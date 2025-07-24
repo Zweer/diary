@@ -1,7 +1,7 @@
 <header>
     <nav>
         <ul>
-            <li><i class="fa-regular fa-heart fa-beat"></i></li>
+            <li><a href="{{ site.baseurl }}/"><i class="fa-regular fa-heart fa-beat"></i></a></li>
 			<!--get the nav links in  _config.yml -->
 			{% for link in site.nav %}
 			<li><a href="{{ site.baseurl }}{{ link[1] }}">{{ link[0] }}</a></li>
