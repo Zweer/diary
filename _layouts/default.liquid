@@ -3,15 +3,21 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
+        
+        <!-- Font preloading -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://kit.fontawesome.com">
+        
+        <!-- SEO and Meta -->
+        {% seo %}
+        
         <link rel="icon" href="{{ "/assets/img/favicon.svg" | relative_url }}" type="image/svg+xml">
 
         <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
         <link rel="stylesheet" href="{{ "/assets/css/syntax.css" | relative_url }}">
 
-        <script src="https://kit.fontawesome.com/c0a5510d86.js" crossorigin="anonymous"></script>
-
-        <title>{{ page.title}}</title>
+        <script src="https://kit.fontawesome.com/c0a5510d86.js" crossorigin="anonymous" async></script>
     </head>
 
     <body>

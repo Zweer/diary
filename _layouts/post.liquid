@@ -3,6 +3,10 @@ layout: default
 title: {{ page.title }}
 ---
 
+<script>
+  document.body.classList.add('post-page');
+</script>
+
 <div class="post-date">
   <div class="date-wrapper">
     <span class="date-day">{{ page.date | date: "%-d" }}</span>
@@ -14,3 +18,19 @@ title: {{ page.title }}
 <h1>{{ page.title }}</h1>
 
 {{ page.content }}
+
+<!-- Post Navigation for Swipe -->
+<nav class="post-navigation" style="display: none;">
+  {% if page.previous %}
+    <div class="post-nav-prev">
+      <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
+    </div>
+  {% endif %}
+  {% if page.next %}
+    <div class="post-nav-next">
+      <a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
+    </div>
+  {% endif %}
+</nav>
+
+<script src="{{ "/assets/js/swipe-navigation.js" | relative_url }}" async></script>

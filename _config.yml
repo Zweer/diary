@@ -30,3 +30,16 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
+
+# Performance optimizations
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]
+  blanklines: false
+  profile: false
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag

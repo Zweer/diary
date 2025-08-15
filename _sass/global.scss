@@ -1,18 +1,46 @@
 @import "variables";
 
+// Smooth scrolling and accessibility
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Microsoft YaHei UI";
   margin: 0;
-
   background: $firstColor;
   color: $forthColor;
+}
+
+// Focus indicators for accessibility
+*:focus {
+  outline: 2px solid $thirdColor;
+  outline-offset: 2px;
+}
+
+// Skip to content for screen readers
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: $thirdColor;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1001;
+  
+  &:focus {
+    top: 6px;
+  }
 }
 
 a {
   text-decoration: none;
   color: $forthColor;
+  transition: color 0.3s ease;
 
-  &:hover {
+  &:hover, &:focus {
     color: $thirdColor;
   }
 }
