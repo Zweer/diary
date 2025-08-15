@@ -81,6 +81,10 @@ Posts are in Markdown format in the `_posts/` folder with the format:
 2. **Italian dates**: Automatic conversion of month and day names
 3. **Post navigation**: Fixed buttons on mobile to navigate between messages
 4. **"Paper" design**: Diary page effect with shadows
+5. **Swipe navigation**: Swipe left/right between posts on mobile
+6. **Performance optimized**: CSS/HTML minification, font preloading
+7. **Accessibility**: Focus indicators, smooth scrolling, skip links
+8. **SEO ready**: Automatic meta tags and structured data
 
 ## Future Development Notes
 - The site is designed to grow with GioGio
@@ -107,8 +111,10 @@ Posts are in Markdown format in the `_posts/` folder with the format:
 ## CSS Architecture
 - `calendar-clean.scss` replaced old `calendar.scss`
 - `calendar-simple.js` replaced old `calendar.v2.js`
+- `swipe-navigation.js` for mobile post navigation
 - Mobile-specific styles in `mobile-nav.scss`
 - Date display component in `date-display.scss`
+- Performance optimizations in `_config.yml`
 
 ## Automated Testing
 
